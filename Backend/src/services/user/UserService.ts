@@ -1,3 +1,4 @@
+import { IUser } from "./user.schema";
 
 
 export class UserService {
@@ -6,5 +7,9 @@ export class UserService {
 
     login() {
         
+    }
+
+    getUserInfo(): Promise<IUser> {
+
     }
 }
