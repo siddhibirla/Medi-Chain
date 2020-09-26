@@ -9,58 +9,67 @@
 
     <body>
 
-                <img src="images/Login Background.png" id="image">
+        <img src="images/Login Background.png" id="image">
+        
+        <div id="Rectangle-Copy-4">
+            <h3 id="text"> The platform that will revolution the 
+                medical supply chain 
+            </h3>
+
+            <img src="images/Med-Chain Logo.png" id="Med-Chain-Logo">
+            <img src="images/Doctors-rafiki.png" id="Doctors-rafiki">                   
+
+        </div>
+        
+        <div id="Rectangle-Copy-3">
+            <div id="login-box">
+                <div id="button_scroll"> </div>
+                    <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()"> Sign-Up</button>
+            </div>
+            <div id="sign-in">
                 
-                <div id="Rectangle-Copy-4">
-                    <h3 id="text"> The platform that will revolution the 
-                        medical supply chain 
-                    </h3>
+            </div>
 
-                   <img src="images/med-chain-logo.png"
+            <form id="register" class="input">
+                <span id="username"> Username!! </span><input type="text"  class="input-field" placeholder="User-Id" required>
+                <span id="password">Password </span><input type="text" id="pass" class="input-field" placeholder="Password" required>
+                <span id="email">Email Address </span><input type="text" id="email" class="input-field" placeholder="E-mail" required>
+                <input type="checkbox" class="check-box"> <span> I Agree to the terms and Conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
 
-                   srcset="images/med-chain-logo@2x.png 2x,images/med-chain-logo@3x.png 3x" id="Med-Chain-Logo">
-                   <img src="images//doctors-rafiki.png"
-                   srcset="images/doctors-rafiki@2x.png 2x,images/doctors-rafiki@3x.png 3x"id="Doctors-rafiki">                   
+            <form id="log" class="input">
+                <span id="username"> Username!!! </span><input type="text"  class="input-field" placeholder="User-Id" required>
+                <span id="password">Password </span><input type="text" id="pass" class="input-field" placeholder="Password" required>
+                <input type="checkbox" class="check-box"> <span> Remember Password</span>
+                <button type="submit" class="submit-btn">Log-In</button>
+            </form>
 
-                </div>
-                
-                <div id="Rectangle-Copy-3">
-                    <div id="login-box">
-                        <div id="button"> </div>
-                          <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
-                          <button type="button" class="toggle-btn" onclick="register()"> Sign-Up</button>
-                    </div>
-                    <div id="sign-in"></div>
-
-                    <form id="log"class="input">
-                        <span id="username"> Username </span><input type="text"  class="input-field" placeholder="User-Id" required>
-                        <span id="password">Password </span><input type="text" id="pass" class="input-field" placeholder="Password" required>
-                        <input type="checkbox" class="check-box"> <span> Remember Password</span>
-                        <button type="submit" class="submit-btn">Log-In</button>
-                    </form>
-
-                    <form id="register"class="input">
-                        <span id="username"> Username </span><input type="text"  class="input-field" placeholder="User-Id" required>
-                        <span id="password">Password </span><input type="text" id="pass" class="input-field" placeholder="Password" required>
-                        <span id="email">Email Address </span><input type="text" id="email" class="input-field" placeholder="E-mail" required>
-                        <input type="checkbox" class="check-box"> <span> I Agree to the terms and Conditions</span>
-                        <button type="submit" class="submit-btn">Register</button>
-                    </form>
-                </div>
+            
+        </div>
                 
 
 
         <script>
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
-            var z= document.getElementById("button");
+            var log_pg= document.getElementById("log");
+            var register_pg = document.getElementById("register");
+            var btn_scroll= document.getElementById("button_scroll");
 
-            function register(){
-                x.style.left= "-200px";
-                y.style.right="500px";
-                z.style.right="50px"
+           function register(){
+               //alert("HI REGISTER");
+                log_pg.style.left= "-400px";
+                register_pg.style.left="60px";
+                btn_scroll.style.right="10px"
 
             }
+
+            function login(){
+                //alert("HI LOGIN");
+                log_pg.style.left= "60px";
+                register_pg.style.left="760px";
+                btn_scroll.style.right="105px"
+            }  
         </script>
 
 
