@@ -1,0 +1,1 @@
+{"version":3,"file":"checkProperty.js","sourceRoot":"","sources":["../../../src/utils/checkProperty.ts"],"names":[],"mappings":";;AAEA,MAAM,OAAO,GAAG,CAAC,GAAQ,EAAW,EAAE;IAClC,KAAK,MAAM,GAAG,IAAI,GAAG,EAAE;QACnB,IAAI,GAAG,CAAC,GAAG,CAAC,IAAI,IAAI,IAAI,GAAG,CAAC,GAAG,CAAC,KAAK,EAAE;YACnC,OAAO,IAAI,CAAC;KACnB;IACD,OAAO,KAAK,CAAC;AACjB,CAAC,CAAA;AAED,kBAAe,OAAO,CAAC"}

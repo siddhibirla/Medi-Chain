@@ -1,5 +1,5 @@
 import * as express from 'express';
-import '../../../src/app/services/auth/passport';
+import '../services/auth/passport';
 import { userLogin, userRegister } from './controller';
 //const tokenService = new TokenService();
 

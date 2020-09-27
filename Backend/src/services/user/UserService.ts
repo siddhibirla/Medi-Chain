@@ -43,10 +43,10 @@ export class UserService {
     async register(form: RegisterForm): Promise<string> {
         const EmailExists = await UserDao.exists({userId: form.userId});
         const UserExists = await UserDao.exists({userId: form.userId});
-        if (!EmailExists) {
+        if (EmailExists) {
             throw new Error(messages.EMAIL_EXIST)
         }
-        if (!UserExists) {
+        if (UserExists) {
             throw new Error(messages.USERNAME_EXISTS)
         }
         if(form.password !== form.confirm_password) {
