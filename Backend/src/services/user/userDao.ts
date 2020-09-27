@@ -10,7 +10,11 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         required: true
     },
-    name: {
+    userId: {
+        type: String,
+        required: true
+    },
+    hospitalName: {
         type: String,
         required: true
     },
@@ -27,6 +31,7 @@ const userSchema = new mongoose.Schema({
 // define compound indexes in the schema
 userSchema.index({
     email: 1,
+    userId: 1,
 });
 
 const UserDao = mongoose.model<IUserModel>('User', userSchema);
