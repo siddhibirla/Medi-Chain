@@ -1,9 +1,7 @@
 
 import jwt from 'jsonwebtoken';
-import { ResponseFormat } from '../../utils/responseFormat';
 import './passport';
 
-const responseFormat =  new ResponseFormat();
 const { JWT_SECRET } = process.env;
 
 export interface Claims {

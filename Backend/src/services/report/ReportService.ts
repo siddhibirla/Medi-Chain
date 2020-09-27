@@ -1,15 +1,15 @@
-import { IReport } from "./report.schema";
+//import { IReport } from "./report.schema";
 
 
 export class ReportService {
     
     constructor() {}
 
-    getReport(): Promise<IReport> {
-
+    getReport(): Promise<any> {
+        return Promise.resolve();
     }
 
-    getReports(): Promise<IReport[]> {
-
+    getReports(): Promise<any[]> {
+        return Promise.resolve([]);
     }
 }

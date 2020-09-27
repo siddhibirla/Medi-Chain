@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import passport from 'passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import CustomerDao from '../customers/customerDao';
+import UserDao from '../user/userDao';
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ passport.use('user-jwt', new Strategy({
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     },
     (async(jwt_payload, done) => {
-        const customer = await CustomerDao.findOne({
+        const customer = await UserDao.findOne({
             id: jwt_payload._id,
             email: jwt_payload.email,
         });

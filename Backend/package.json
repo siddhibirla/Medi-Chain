@@ -1,7 +1,7 @@
 {
     "name": "Backend",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "dist/index.js",
     "license": "MIT",
     "scripts": {
         "lint": "tslint --project tsconfig.json",
@@ -11,13 +11,16 @@
         "startdevConfig": "yarn run buildValidator && nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node src/index.ts",
         "startdev": "yarn run buildValidator && nodemon",
         "buildDev": "ts-interface-builder -i -o src/utils/validators src/app/services/customers/CustomerService.ts",
-        "buildValidator": "ts-interface-builder -i -o src/app/utils/validators/ src/app/services/**/*Service.ts",
+        "buildValidator": "ts-interface-builder -i -o src/utils/validators/ src/services/**/*Service.ts",
         "prod": "yarn run buildValidator && yarn run build && yarn run start",
         "start": "node dist/index.js"
     },
     "dependencies": {
+        "@types/app-root-path": "^1.2.4",
         "@types/bcrypt": "^3.0.0",
         "@types/node": "^14.11.2",
+        "@types/passport": "^1.0.4",
+        "@types/passport-jwt": "^3.0.3",
         "app-root-path": "^3.0.0",
         "bcrypt": "^5.0.0",
         "boom": "^7.3.0",
@@ -29,6 +32,7 @@
         "express": "^4.17.1",
         "helmet": "^4.1.1",
         "http-status-codes": "^2.1.4",
+        "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.10.7",
         "morgan": "^1.10.0",
         "passport": "^0.4.1",
@@ -38,8 +42,11 @@
     },
     "devDependencies": {
         "@types/boom": "^7.3.0",
+        "@types/compression": "^1.7.0",
         "@types/express": "^4.17.8",
+        "@types/jsonwebtoken": "^8.5.0",
         "@types/mongoose": "^5.7.36",
+        "@types/morgan": "^1.9.1",
         "ts-interface-builder": "^0.2.2"
     }
 }
