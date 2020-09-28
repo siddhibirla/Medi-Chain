@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/mystyle.css">
+
+    <!-- Apex chart -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <title>Medi Chain!</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="card" id="main-card">
+            <div class="card-body">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logo.jpg" alt="logo" width="140" height="140">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Order history</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Saved suppliers</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="assets/img/logo.jpg" alt="profile_pic" id="profile_pic" class="rounded-circle" width="50" height="50">
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /.navbar -->
+                <div  class="container-fluid">
+                    <div class="row" id="hospital_top">
+                        <div class="col-md-12">
+                            <img src="assets/img/hospital_org.jpg" alt="hospital-logo" width="60" height="60" class="img-responsive"> <span id="hospital_txt">St. James Hospital</span>
+                        </div>
+                    </div>
+                    <div class="row page_heading page_heading_sp" id="page_heading">
+                        <div class="col-md-12">
+                            Dashboard data outcomes
+                        </div>
+                    </div>
+                    <div class="row page_subheading page_subheading_sp" id="">
+                        <div class="col-md-4">
+                            Dashboard period
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Selet the data period you want to display recommendations for</p>
+                            <ul class="nav nav-fill" id="nav_bg_round">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tomorrow</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Next 7 days</a>
+                                </li>
+                                <li class="nav-item nav_rad">
+                                    <a class="nav-link" href="#" style="color:#fff;">Next 10 days</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row page_subheading page_subheading_sp" id="">
+                        <div class="col-md-4">
+                            <p>Conditions</p>
+                            <p class="base_style">Please select the condition/illness/disease you would like to show data for</p>
+                            <select class="select_drop base_style" name="cond_select" id="cond_select" style="width: 50%">
+                                <Option value=""> Select option</option>
+                                <Option value="covid-19"> Covid-19</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <p>Product</p>
+                            <p class="base_style">Please select the product/medicine/medical equipment  you would like to show data for</p>
+                            <select class="select_drop" name="prod_select" id="prod_select" style=" width: 50%">
+                                <Option value=""> Select option</option>
+                                <Option value="covid-19"> Covid-19</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <br/><br/><br/>
+                            <button class="my_btn align-bottom" style="">Refresh &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./top content -->
+                <div class="container-fluid">
+                    <div class="card card_bg_color" id="predictive-analytic-bg-card">
+                        <div class="card-body">
+                            <div class="card" id="predictive-analytic-card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="nav">
+                                                <li class="nav-item">
+                                                    <p class="page_subheading ">Predictive analytics</p>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Per day</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Per week</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Per month</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row " style="background-color:#1b3e5f; margin:20px;padding: 30px; border-radius:10px; color: #fff; font-size: 20px;">
+                                        <div class="col-md-12">
+                                            <div class="row text-center">
+                                                <div class="col-md-4">
+                                                    <label>By country</label><br/>
+                                                    <select class="select_drop" name="country_select" id="country_select" style="width: 50%">
+                                                        <Option value=""> Select option</option>
+                                                        <Option value="covid-19"> Covid-19</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>By city</label><br/>
+                                                    <select class="select_drop" name="city_select" id="city_select" style="width: 50%">
+                                                        <Option value=""> Select option</option>
+                                                        <Option value="covid-19"> Covid-19</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>By borough</label><br/>
+                                                    <select class="select_drop" name="borough_select" id="borough_select" style="width: 50%">
+                                                        <Option value=""> Select option</option>
+                                                        <Option value="covid-19"> Covid-19</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4" id="spline_chart_country">
+                                            
+                                        </div>
+                                        <div class="col-md-4" id="spline_chart_city">
+                                            
+                                        </div>
+                                        <div class="col-md-4" id="spline_chart_borough">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Predictive analytic -->
+                <div class="container-fluid">
+                    <div class="card card_bg_color" id="product_info_card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="page_subheading   ">Product Information</p>
+                                </div>
+                                <div class="col-md-8 text-right alert_txt">
+                                    Alert
+                                </div>
+                            </div>
+                            <div class="row product_info_border">
+                                <div class="col-md-12 mt-3">
+                                    <div class="row page_subheading">
+                                        <div class="col-md-4">
+                                            Inventory state
+                                        </div>
+                                        <div class="col-md-8 text-right" >
+                                            No previous data has been uploaded&nbsp;&nbsp;&nbsp;&nbsp;<button class="my_btn">Upload &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5 mb-5">
+                                        <div class="col-md-4">
+                                            &nbsp;
+                                        </div>
+                                        <div class="col-md-4 noupload_txt text-center">
+                                            This widget will populate information when you upload your data
+                                            
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="assets/img/upward_arrow_org.jpg" width="150" height="65">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <img src="assets/img/pg2_org.jpg" width="536" height="405">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./product area -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="page_subheading page_subheading_sp">Smart recommendation</p>
+                                </div>
+                                <div class="col-md-8">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 text-left mt-5">
+                                    <img src="assets/img/link_org.jpg" width="150" height="150">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card card_bg_color" id="product_info_card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    Based on the predicted cases for the next 30 days, we recommend having 600K PPE units before or on Nov 3rd, 2020
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-2">
+                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    Based on the predicted cases for the next 30 days, we recommend having 600K PPE units before or on Nov 3rd, 2020
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./recommendation -->
+                            <div class="row mt-4">
+                                <div class="col-md-2">
+                                    <img src="assets/img/info_icon.png" class="rounded-circle" width="70" height="70">
+                                </div>
+                                <div>
+                                    <p class="mt-3" style="color: #608aab">Upload your inventory data to get more tailored insights</p>
+                                </div>
+                                <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./product information -->
+                <div class="container-fluid">
+                    <div class="card" id="product_info_card">
+                        <div class="card-body">
+                            <div class="row page_subheading page_subheading_sp">
+                                <div class="col-md-3">
+                                    <p>Intelligient supply chain</p>
+                                </div>
+                                <div class="col-md-9 text-center">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <img src="assets/img/world_map.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./world map -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://kit.fontawesome.com/92496cd334.js" crossorigin="anonymous"></script>
+    
+
+    <script>
+        
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('.select_drop').select2()
+            
+            // For spline chart for country
+            fetch('json_data.php')
+                .then(response => response.json())
+                .then(res => {
+                    var options = {
+                        series: [{
+                        name: 'PPE',
+                        data: res.spline_chart
+                        }],
+                        chart: {
+                        height: 350,
+                        type: 'area'
+                        },
+                        dataLabels: {
+                        enabled: false
+                        },
+                        
+                        xaxis: {
+                        type: 'date',
+                        categories: res.date
+                        },
+                        tooltip: {
+                        x: {
+                            format: 'dd/MM/yy'
+                        },
+                        },
+                        fill: {
+                        colors: ['#FF0065']
+                        },
+                        markers: {
+                        colors: ['#FF65E5']
+                        },
+                        dataLabels: {
+                        style: {
+                            colors: ['#FF0065']
+                        }
+                        },
+                        stroke: {
+                            show: true,
+                            curve: 'smooth',
+                            lineCap: 'round',
+                            colors: ['#FF0065', '#E91E63', '#9C27B0'],
+                            width: 2,
+                            dashArray: 0,      
+                        }
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#spline_chart_country"), options);
+                        chart.render();
+                    })
+
+                // For spline chart for city
+                fetch('json_data.php')
+                    .then(response => response.json())
+                    .then(res => {
+                    var options = {
+                        series: [{
+                        name: 'PPE',
+                        data: res.spline_chart
+                        }],
+                        chart: {
+                        height: 350,
+                        type: 'area'
+                        },
+                        dataLabels: {
+                        enabled: false
+                        },
+                        
+                        xaxis: {
+                        type: 'date',
+                        categories: res.date
+                        },
+                        tooltip: {
+                        x: {
+                            format: 'dd/MM/yy'
+                        },
+                        },
+                        fill: {
+                        colors: ['#00F', '#F00']
+                        },
+                        markers: {
+                        colors: ['#00F']
+                        },
+                        dataLabels: {
+                        style: {
+                            colors: ['#00F']
+                        }
+                        },
+                        stroke: {
+                            show: true,
+                            curve: 'smooth',
+                            lineCap: 'round',
+                            colors: ['#00F'],
+                            width: 2,
+                            dashArray: 0,      
+                        }
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#spline_chart_city"), options);
+                        chart.render();
+                    })
+
+                    // For spline chart for borough
+                    fetch('json_data.php')
+                    .then(response => response.json())
+                    .then(res => {
+                    var options = {
+                        series: [{
+                        name: 'PPE',
+                        data: res.spline_chart
+                        }],
+                        chart: {
+                        height: 350,
+                        type: 'area'
+                        },
+                        dataLabels: {
+                        enabled: false
+                        },
+                        
+                        xaxis: {
+                        type: 'date',
+                        categories: res.date
+                        },
+                        tooltip: {
+                        x: {
+                            format: 'dd/MM/yy'
+                        },
+                        },
+                        fill: {
+                        colors: ['#5500FF']
+                        },
+                        markers: {
+                        colors: ['#5500FF']
+                        },
+                        dataLabels: {
+                        style: {
+                            colors: ['#5500FF']
+                        }
+                        },
+                        stroke: {
+                            show: true,
+                            curve: 'smooth',
+                            lineCap: 'round',
+                            colors: ['#5500FF'],
+                            width: 2,
+                            dashArray: 0,      
+                        }
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#spline_chart_borough"), options);
+                        chart.render();
+                    })
+        })
+    </script>
+  </body>
+</html>
