@@ -62,7 +62,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/img/logo.jpg" alt="profile_pic" id="profile_pic" class="rounded-circle" width="50" height="50">
+                                    <img src="assets/img/profile.png" alt="profile_pic" id="profile_pic" class="rounded-circle" width="50" height="50">
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Profile</a>
@@ -146,7 +146,7 @@
                                                 <div class="col-md-4">
                                                     <label class="page_subheading">By borough</label><br/>
                                                     <select class="select_drop" name="borough_select" id="borough_select" style="width: 70%">
-                                                        <Option value="bourough">Bourough</option>
+                                                        <Option value="bourough">Newham</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                         <div class="card-body">
                                             <div class="row ">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/boxes.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[0] ?>
@@ -237,7 +237,7 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/worldwide.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[1] ?>
@@ -245,7 +245,7 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/doctors.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[2] ?>
@@ -371,7 +371,6 @@
             generateBoroughGraph()
             $('#country_select').change(generateCountryGraph)
             $('#city_select').change(generateCityGraph)
-            $('#borough_select').change(generateBoroughGraph)
             $('#dashboard_edit').click(handleDashboardEdit)
         })
         const form = document.forms[0]

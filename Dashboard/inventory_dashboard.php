@@ -63,7 +63,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/img/logo.jpg" alt="profile_pic" id="profile_pic" class="rounded-circle" width="50" height="50">
+                                    <img src="assets/img/profile.png" alt="profile_pic" id="profile_pic" class="rounded-circle" width="50" height="50">
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Profile</a>
@@ -147,7 +147,7 @@
                                                 <div class="col-md-4">
                                                     <label class="page_subheading">By borough</label><br/>
                                                     <select class="select_drop" name="borough_select" id="borough_select" style="width: 70%">
-                                                        <Option value="bourough">Bourough</option>
+                                                        <Option value="bourough">Newham</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -208,6 +208,17 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-md-4 text-center recommend_txt" >
+                                            <u>Available PPE kits</u>
+                                        </div>
+                                        <div class="col-md-4 text-center recommend_txt">
+                                            <u>Average Cost</u>
+                                        </div>
+                                        <div class="col-md-4 text-center recommend_txt">
+                                            <u>Average Delivery Time</u>
+                                        </div>
+                                    </div>
+                                <div class="row">
                                 <div class="col-md-4">
                                     <p class="page_subheading page_subheading_sp">Smart recommendation</p>
                                 </div>
@@ -224,7 +235,7 @@
                                         <div class="card-body">
                                             <div class="row ">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/boxes.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[0] ?>
@@ -232,7 +243,7 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/worldwide.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[1] ?>
@@ -240,7 +251,7 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-md-1 text-center">
-                                                    <img src="assets/img/hospital_org.jpg" width="50" height="50" class="rounded-circle">
+                                                    <img src="assets/icons/navy/doctors.png" width="40" height="40" class="rounded-circle recommend_img">
                                                 </div>
                                                 <div class="col-md-11 recommend_txt">
                                                     <?php echo $recommend_array[2] ?>
@@ -685,6 +696,7 @@
                         ppe_avg_delivery_time_days = res.ppe_avg_delivery_time_days
                         avg_cost_txt = ''
                         avg_del_time_txt = ''
+                        recommend_img = ['assets/flags/india.png', 'assets/flags/italy.png', 'assets/flags/united-kingdom.png']
 
                         country = []
                         $.each(countries, function(index, item) {
@@ -700,14 +712,14 @@
                             $.each(ppe_avg_delivery_time_days, function(index, item) {
                                 avg_del_time[index] = item[country[index]]
                             if(index<3)
-                                avg_del_time_txt += '<p class="text-center base_style" >Average cost per unit in <span style="font-weight: bold;">'+country[index]+' </span>is <span style="font-weight: bold;"> '+avg_del_time[index]+'</span></p>'
+                                avg_del_time_txt += '<p class="text-lef base_style" ><img src="'+recommend_img[index]+'" width="20" height="20" class="rounded-circle responsive">&nbsp;&nbsp;Average cost per unit in <span style="font-weight: bold;">'+country[index]+' </span>is <span style="font-weight: bold;"> '+avg_del_time[index]+'</span></p>'
                         });
 
                         avg_cost = []
                         $.each(ppe_avg_cost_GBP, function(index, item) {
                             avg_cost[index] = item[country[index]]
                             if(index<3)
-                                avg_cost_txt += '<p class="text-center">Average cost per unit in <span style="font-weight: bold;">'+country[index]+'<span style="font-weight: bold;"> is <i class="fa fa-gbp"></i><span style="font-weight: bold;"> '+avg_cost[index]+'</span></p>'
+                                avg_cost_txt += '<p class="text-left"><img src="'+recommend_img[index]+'" width="20" height="20" class="rounded-circle responsive">&nbsp;&nbsp;Average cost per unit in <span style="font-weight: bold;">'+country[index]+'<span style="font-weight: bold;"> is <i class="fa fa-gbp"></i><span style="font-weight: bold;"> '+avg_cost[index]+'</span></p>'
                         });
 
                         $('#avg_cost_recommend').html(avg_cost_txt)
@@ -719,58 +731,48 @@
                             data: available_qty
                             }],
                             chart: {
-                            height: 350,
                             type: 'bar',
+                            height: 350
                             },
                             plotOptions: {
                             bar: {
-                                columnWidth: '50%',
-                                endingShape: 'rounded'  
-                            }
+                                horizontal: false,
+                                columnWidth: '20%',
+                                endingShape: 'rounded'
+                            },
                             },
                             dataLabels: {
                             enabled: false
                             },
                             stroke: {
-                            width: 2
-                            },
-                            
-                            grid: {
-                            row: {
-                                colors: ['#fff', '#f2f2f2']
-                            }
+                            show: true,
+                            width: 2,
+                            colors: ['transparent']
                             },
                             xaxis: {
-                            labels: {
-                                rotate: -45
-                            },
-                            categories: country,
-                            tickPlacement: 'on'
+                            categories: '',
                             },
                             yaxis: {
                             title: {
-                                text: 'PPE',
-                            },
+                                text: 'Availability of PPE Kits'
+                            }
                             },
                             fill: {
-                            type: 'gradient',
-                            gradient: {
-                                shade: 'light',
-                                type: "horizontal",
-                                shadeIntensity: 0.25,
-                                gradientToColors: undefined,
-                                inverseColors: true,
-                                opacityFrom: 0.85,
-                                opacityTo: 0.85,
-                                stops: [50, 0, 100]
+                            opacity: 1
                             },
+                            tooltip: {
+                            y: {
+                                formatter: function (val) {
+                                return "" + val + " qty available"
+                                }
+                            }
                             }
                             };
 
-                            var qty_avl_chart = new ApexCharts(document.querySelector("#qty_avl_chart"), options);
-                            qty_avl_chart.render();
+                            var chart = new ApexCharts(document.querySelector("#qty_avl_chart"), options);
+                            chart.render();
 
-
+                        
                             //avg_cost_chart
                             
                             var options = {
@@ -827,7 +829,7 @@
                                 palette: 'palette2'
                                 },
                                 title: {
-                                text: "Avg. cost / country"
+                                text: ""
                                 },
                                 responsive: [{
                                 breakpoint: 480,
