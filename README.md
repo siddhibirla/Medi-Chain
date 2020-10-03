@@ -9,3 +9,7 @@
   4. Oluwafemi Akinde
   5. Edward Gent
 
+# Steps
+
+1. Clone the repo
+2. Download Xampp (https://www.apachefriends.org/download.html)
